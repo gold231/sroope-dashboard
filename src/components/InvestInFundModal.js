@@ -21,25 +21,25 @@ function InvestInFundModal(props) {
 
         <div className="App">
           <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-control">
-            <label>Investor Address</label>
-            <input type="text" name="investorAddr" ref={register ({ required: true })} />
-            {errors.investorAddr && "Address Required"}
-          </div>
-          <div className="form-control">
-            <label>Investor Name</label>
-            <input type="text" name="investorName" ref={register} />
-          </div>
-          <div className="form-control">
-            <label>Investor Country</label>
-            <input type="text" name="investorCountry" ref={register}/>
-          </div>
-          <div className="form-control">
-            <label>No Shares</label>
-            <input type="noShares" name="noShares" ref={register ({ required: true })}/>
-            {errors.noShares && "Number of Shares Required"}
-          </div>
-          <input type='submit' /> 
+            <div className="form-control">
+              <label>Investor Address</label>
+              <input type="text" name="investorAddr" ref={register ({ required: true })} />
+              {errors.investorAddr && "Address Required"}
+            </div>
+            <div className="form-control">
+              <label>Investor Name</label>
+              <input type="text" name="investorName" ref={register} />
+            </div>
+            <div className="form-control">
+              <label>Investor Country</label>
+              <input type="text" name="investorCountry" ref={register}/>
+            </div>
+            <div className="form-control">
+              <label>No Shares</label>
+              <input type="noShares" name="noShares" ref={register ({ required: true })}/>
+              {errors.noShares && "Number of Shares Required"}
+            </div>
+            <input type='submit' /> 
           </form>
         </div>
     </div>
