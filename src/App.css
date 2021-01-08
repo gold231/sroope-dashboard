@@ -1,0 +1,128 @@
+body {
+  margin: 10px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.fund {
+  grid-area: fund;
+}
+
+.investor {
+  grid-area: investor;
+}
+
+.investorpie {
+  grid-area: investorpie;
+}
+
+.investorbar {
+  grid-area: investorbar;
+}
+
+.property {
+  grid-area: property;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+  "header header header header"
+  "investor investor investorpie investorbar"
+  "property property fund fund"
+  "footer footer footer footer";
+  background-color: blue;
+  color: white;
+}
+
+.box {
+  background-color: black;
+  border-color: white;
+  border-width: thin;
+  border-style: solid;
+}
+
+.header {
+  background-color: brown;
+}
+
+.fund {
+  background-color: yellow;
+  color: black;
+}
+
+.investor {
+  background-color: red;
+}
+
+.investorpie {
+  background-color: orange;
+}
+
+.investorbar {
+  background-color: purple;
+}
+.property {
+  background-color: grey;
+}
+
+/* Modal Stuff */
+.App {
+  margin: 1rem auto;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000003a;
+  transition: opacity 0.2s ease;
+}
+
+.modal {
+  width: 500px;
+  position: relative;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: green;
+  border-radius: 2px;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+  /*box-shadow: 0 2px 8px 3px;*/
+  font-family: Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+.modal button {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px #0000003a;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.562);
+}
