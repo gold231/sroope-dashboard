@@ -8,12 +8,9 @@ import Properties from './components/Properties.js';
 import InvestInFundModal from './components/InvestInFundModal';
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-
-  const [show, setShow] = useState(false);
-  const openModal = () => setShow(true);
-  const closeModal = () => setShow(false);
 
   const [users, setUsers] = useState('');
   const [funds, setFunds] = useState([]);
@@ -119,8 +116,7 @@ function App() {
 
       <div className="box investor">
         <Investors investors={investors} />      
-        {!show && <button onClick={openModal}>Invest In Fund</button>}
-        <InvestInFundModal closeModal={closeModal} show={show} investInFund={investInFund} />
+        <InvestInFundModal investInFund={investInFund} />
       </div>
 
       <div className="box investorpie">

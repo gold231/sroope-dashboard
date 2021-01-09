@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
+import { Modal, Button, Form } from "react-bootstrap";
 
 function InvestInFundModal(props) {
 
-  const { show, closeModal, investInFund } = props;
+  const { investInFund } = props;
+
+  const [show, setShow] = useState(false);
+  const openModal = () => setShow(true);
+  const closeModal = () => setShow(false);
 
   const { register, handleSubmit, errors } = useForm();
 
@@ -13,36 +18,45 @@ function InvestInFundModal(props) {
 
   return (
     <>
-    <div className={show ? "overlay" : "hide"} onClick={closeModal} />
-      <div className={show ? "modal" : "hide"}>
-        <button onClick={closeModal}>X</button>
+      {!show && <Button onClick={openModal}>Invest In Fund</Button>}
+      
+      <Modal show={show} onHide={closeModal}>
 
-        <h1>Invest In Fund</h1>
+        <Modal.Header closeButton>
+          <Modal.Title>Invest In Fund</Modal.Title>
+        </Modal.Header>
 
-        <div className="App">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control">
-              <label>Investor Address</label>
-              <input type="text" name="investorAddr" ref={register ({ required: true })} />
-              {errors.investorAddr && "Address Required"}
-            </div>
-            <div className="form-control">
-              <label>Investor Name</label>
-              <input type="text" name="investorName" ref={register} />
-            </div>
-            <div className="form-control">
-              <label>Investor Country</label>
-              <input type="text" name="investorCountry" ref={register}/>
-            </div>
-            <div className="form-control">
-              <label>No Shares</label>
-              <input type="noShares" name="noShares" ref={register ({ required: true })}/>
-              {errors.noShares && "Number of Shares Required"}
-            </div>
-            <input type='submit' /> 
-          </form>
-        </div>
-    </div>
+        <Modal.Body>
+          <Form onSubmit={ handleSubmit(onSubmit) }>
+
+            <Form.Group controlId="investorAddr">
+              <Form.Label>Investor Address</Form.Label>
+              <Form.Control type="text" name="investorAddr" placeholder="Enter Address" ref={register ({ required: true })}/>
+              <div className="text-danger ml-2">{errors.investorAddr && "Address Required"}</div> 
+            </Form.Group>
+
+            <Form.Group controlId="investorName">
+              <Form.Label>Investor Name</Form.Label>
+              <Form.Control type="text" name="investorName" placeholder="Enter Name" ref={register}/>
+            </Form.Group>
+
+            <Form.Group controlId="investorCountry">
+              <Form.Label>Investor Country</Form.Label>
+              <Form.Control type="text" name="investorCountry" placeholder="Enter Country" ref={register}/>
+            </Form.Group>
+
+            <Form.Group controlId="noShares">
+              <Form.Label>No Shares</Form.Label>
+              <Form.Control type="noShares" name="noShares" placeholder="No Shares" ref={register ({ required: true })}/>
+              <div className="text-danger ml-2">{errors.noShares && "Number of Shares Required"}</div>
+            </Form.Group>
+
+            <Button type='submit' >Submit</Button>
+
+          </Form>
+        </Modal.Body>
+
+      </Modal>
     </>
   );
 }

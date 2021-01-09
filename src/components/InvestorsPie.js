@@ -30,16 +30,6 @@ import {Pie} from 'react-chartjs-2';
          <h1>Pie Chart</h1>
          <Pie
             data={state}
-            // options={{
-            //    // maintainAspectRatio: false,
-            //    scales: {
-            //    yAxes: [{
-            //       backgroundColor: {
-            //          red, blue, green
-            //       }
-            //    }]
-            //    }
-            // }}
          />
       </div>
     );

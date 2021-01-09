@@ -8,11 +8,11 @@ function Fund({funds}) {
             Fund Tiles
         </div>
         <div> {funds.map((fund, index) => (
-                <tr key={index}>
+                <div key={index}>
                   <div>[ Fund Name: {fund.fundName} ]  [ Total Shares: {fund.fundTotalShares} ]</div>
                   <div>[ Share Balance: {fund.fundShareBalance} ] [ Share Price: {fund.fundSharePrice} ]</div>
                   <div>[ Share Value: {fund.fundShareValue} ]  [ DAI Balance: {fund.fundDaiBalance} ]</div>
-                </tr>
+                </div>
              ))}
         </div>
       </div>
