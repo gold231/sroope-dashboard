@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Container } from "react-bootstrap";
 
 function InvestInFundModal(props) {
 
@@ -18,45 +18,54 @@ function InvestInFundModal(props) {
 
   return (
     <>
-      {!show && <Button onClick={openModal}>Invest In Fund</Button>}
-      
-      <Modal show={show} onHide={closeModal}>
+      <div className="my-3">
+        <Container className="overflow-auto">
+          {!show && <Button className="float-right" onClick={openModal}>Invest In Fund</Button>}
+        </Container>
+        
+        <Modal show={show} onHide={closeModal}>
 
-        <Modal.Header closeButton>
-          <Modal.Title>Invest In Fund</Modal.Title>
-        </Modal.Header>
+          <Modal.Header closeButton>
+            <Modal.Title>Invest In Fund</Modal.Title>
+          </Modal.Header>
 
-        <Modal.Body>
-          <Form onSubmit={ handleSubmit(onSubmit) }>
+          <Modal.Body>
+            <Form onSubmit={ handleSubmit(onSubmit) }>
 
-            <Form.Group controlId="investorAddr">
-              <Form.Label>Investor Address</Form.Label>
-              <Form.Control type="text" name="investorAddr" placeholder="Enter Address" ref={register ({ required: true })}/>
-              <div className="text-danger ml-2">{errors.investorAddr && "Address Required"}</div> 
-            </Form.Group>
+              <Form.Group controlId="investorAddr">
+                <Form.Label>Investor Address</Form.Label>
+                <Form.Control 
+                  type="text" 
+                  name="investorAddr" 
+                  placeholder="Enter Address" 
+                  ref={register ({ required: true })}
+                />
+                <div className="text-danger ml-2">{errors.investorAddr && "Address Required"}</div> 
+              </Form.Group>
 
-            <Form.Group controlId="investorName">
-              <Form.Label>Investor Name</Form.Label>
-              <Form.Control type="text" name="investorName" placeholder="Enter Name" ref={register}/>
-            </Form.Group>
+              <Form.Group controlId="investorName">
+                <Form.Label>Investor Name</Form.Label>
+                <Form.Control type="text" name="investorName" placeholder="Enter Name" ref={register}/>
+              </Form.Group>
 
-            <Form.Group controlId="investorCountry">
-              <Form.Label>Investor Country</Form.Label>
-              <Form.Control type="text" name="investorCountry" placeholder="Enter Country" ref={register}/>
-            </Form.Group>
+              <Form.Group controlId="investorCountry">
+                <Form.Label>Investor Country</Form.Label>
+                <Form.Control type="text" name="investorCountry" placeholder="Enter Country" ref={register}/>
+              </Form.Group>
 
-            <Form.Group controlId="noShares">
-              <Form.Label>No Shares</Form.Label>
-              <Form.Control type="noShares" name="noShares" placeholder="No Shares" ref={register ({ required: true })}/>
-              <div className="text-danger ml-2">{errors.noShares && "Number of Shares Required"}</div>
-            </Form.Group>
+              <Form.Group controlId="noShares">
+                <Form.Label>No Shares</Form.Label>
+                <Form.Control type="noShares" name="noShares" placeholder="No Shares" ref={register ({ required: true })}/>
+                <div className="text-danger ml-2">{errors.noShares && "Number of Shares Required"}</div>
+              </Form.Group>
 
-            <Button type='submit' >Submit</Button>
+              <Button type='submit' >Submit</Button>
 
-          </Form>
-        </Modal.Body>
+            </Form>
+          </Modal.Body>
 
-      </Modal>
+        </Modal>
+      </div>
     </>
   );
 }

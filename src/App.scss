@@ -1,0 +1,30 @@
+body {
+  margin: 10px;
+}
+
+.investor {
+  width: 80%;
+  margin: auto 10%;
+  @media (max-width: 768px) { 
+    font-size:  14px;
+    width: 90%;
+    margin: auto 5%;
+  }
+  @media (max-width: 576px) {
+    font-size: 10px;
+  }
+}
+
+/* Modal Stuff */
+.App {
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.modal {
+  font-family: Helvetica, Arial, sans-serif;
+  // .modal-dialog {
+  //   width: auto !important;
+  //   min-width: 250px;
+  // }
+}

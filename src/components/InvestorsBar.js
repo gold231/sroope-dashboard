@@ -38,7 +38,7 @@ import {Bar} from 'react-chartjs-2';
               yAxes: [{
                 ticks: {
                   min: 0,
-                  max: 100
+                  // max: 100
                 }
               }]
             }

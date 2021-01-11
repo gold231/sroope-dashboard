@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap'
 import Header from './components/Header';
 import Fund from './components/Fund';
 import Investors from './components/Investors';
@@ -7,7 +8,7 @@ import InvestorsBar from './components/InvestorsBar';
 import Properties from './components/Properties.js';
 import InvestInFundModal from './components/InvestInFundModal';
 
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -108,32 +109,36 @@ function App() {
   },[])
 
   return (
-    <div className="wrapper"> 
+    // <div className="wrapper"> 
+    <div>
 
-      <div className="box header">
+      <div className="p-3">
         <Header users={users} />
       </div>
-
-      <div className="box investor">
-        <Investors investors={investors} />      
+      
+        <Investors investors={investors} />
         <InvestInFundModal investInFund={investInFund} />
-      </div>
 
-      <div className="box investorpie">
-        <InvestorsPie investors={investors} />      
-      </div>
+      <Container>
+        <Row className="mx-0 my-3">
+          <Col md="6">
+            <InvestorsPie investors={investors} />
+          </Col>
+          <Col md="6">
+            <InvestorsBar investors={investors} />
+          </Col>
+        </Row>
 
-      <div className="box investorbar">
-        <InvestorsBar investors={investors} />      
-      </div>
+        <Row className="mx-0 my-3">
+          <Col md="6">
+            <Properties properties={properties}/>
+          </Col>
+          <Col md="6">
+            <Fund funds={funds} />      
+          </Col>
+        </Row>
 
-      <div className="box property">
-        <Properties properties={properties}/>
-      </div>
-
-      <div className="box fund">
-        <Fund funds={funds} />      
-      </div>
+      </Container>
 
       <div className="box footer"> Footer </div>
 

@@ -5,11 +5,17 @@ import {Pie} from 'react-chartjs-2';
 
    let labels = [];
    let dataset = [];
+   let rest_data = 0;
    for (let i=0;i<investors.length;i++) {
       labels.push(investors[i].investorName); 
       dataset.push(investors[i].shareBalance);
+      rest_data += investors[i].shareBalance;
    }
+   rest_data = 300 - rest_data;
 
+   labels.push('rest Investors');
+   dataset.push(rest_data);
+   
    let state = {
       labels: labels,
       datasets: [
@@ -25,14 +31,14 @@ import {Pie} from 'react-chartjs-2';
       ]
    };
 
-    return (
+   return (
       <div>Investors Pie
          <h1>Pie Chart</h1>
          <Pie
             data={state}
          />
       </div>
-    );
+   );
  }
 
  export default InvestorsPie;
