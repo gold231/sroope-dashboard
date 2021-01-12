@@ -11,23 +11,23 @@ import { Table } from "react-bootstrap";
           <Table className="text-center">
             <thead>
               <tr>
-                <th className="p-1">id</th> 
-                <th className="p-1">Investor</th> 
-                <th className="p-1">Name</th> 
-                <th className="p-1">Country</th> 
-                <th className="p-1">Shares</th> 
-                <th className="p-1">%</th> 
+                <th className="px-1 py-2">id</th> 
+                <th className="px-1 py-2">Investor</th> 
+                <th className="px-1 py-2">Name</th> 
+                <th className="px-1 py-2">Country</th> 
+                <th className="px-1 py-2">Shares</th> 
+                <th className="px-1 py-2">%</th> 
               </tr>
             </thead>
             <tbody>
               {investors.map((investor, index) => (
                   <tr key={index}>
-                    <td className="p-1">{index+1}</td>
-                    <td className="p-1">{investor.investorAddr}</td>
-                    <td className="p-1">{investor.investorName}</td>
-                    <td className="p-1">{investor.investorCountry}</td>
-                    <td className="p-1">{investor.shareBalance}</td>
-                    <td className="p-1">{Math.round(investor.sharePercent * 10000)/100}</td>
+                    <td className="px-1 py-2">{index+1}</td>
+                    <td className="px-1 py-2">{investor.investorAddr}</td>
+                    <td className="px-1 py-2">{investor.investorName}</td>
+                    <td className="px-1 py-2">{investor.investorCountry}</td>
+                    <td className="px-1 py-2">{investor.shareBalance}</td>
+                    <td className="px-1 py-2">{Math.round(investor.sharePercent * 10000)/100}</td>
                   </tr>
               ))}
             </tbody>
