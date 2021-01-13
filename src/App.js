@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import Header from './components/Header';
 import Fund from './components/Fund';
 import Investors from './components/Investors';
@@ -109,36 +109,33 @@ function App() {
   },[])
 
   return (
-    // <div className="wrapper"> 
-    <div>
+    <div className="home">
 
       <div className="p-3">
-        <Header users={users} />
+        <Header />
       </div>
       
-        <Investors investors={investors} />
-        <InvestInFundModal investInFund={investInFund} />
+      <Row className="mx-0 my-3">
+        <Col xl="6" lg="12">
+          <Investors investors={investors} />
+          <InvestInFundModal investInFund={investInFund} />
+        </Col>
+        <Col xl="3" lg="6">
+          <InvestorsPie investors={investors} />
+        </Col>
+        <Col xl="3" lg="6">
+          <InvestorsBar investors={investors} />
+        </Col>
+      </Row>
 
-      <Container>
-        <Row className="mx-0 my-3">
-          <Col md="6">
-            <InvestorsPie investors={investors} />
-          </Col>
-          <Col md="6">
-            <InvestorsBar investors={investors} />
-          </Col>
-        </Row>
-
-        <Row className="mx-0 my-3">
-          <Col md="6">
-            <Properties properties={properties}/>
-          </Col>
-          <Col md="6">
-            <Fund funds={funds} />      
-          </Col>
-        </Row>
-
-      </Container>
+      <Row className="mx-0 my-3">
+        <Col md="6">
+          <Properties properties={properties}/>
+        </Col>
+        <Col md="6">
+          <Fund funds={funds} />
+        </Col>
+      </Row>
 
       <div className="box footer"> Footer </div>
 

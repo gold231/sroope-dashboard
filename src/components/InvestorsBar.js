@@ -29,7 +29,7 @@ import {Bar} from 'react-chartjs-2';
 
    return (
       <div>Investors Bar
-         <h1>Bar Chart</h1>
+         <h4>Bar Chart</h4>
          <Bar
           data={state}
           options={{

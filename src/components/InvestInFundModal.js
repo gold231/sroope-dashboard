@@ -14,6 +14,7 @@ function InvestInFundModal(props) {
 
   const onSubmit = (data) => {
     investInFund(0,1,data.noShares);    // side,dai,shares
+    closeModal();
   };
 
   return (

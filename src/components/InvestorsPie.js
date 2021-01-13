@@ -33,7 +33,7 @@ import {Pie} from 'react-chartjs-2';
 
    return (
       <div>Investors Pie
-         <h1>Pie Chart</h1>
+         <h4>Pie Chart</h4>
          <Pie
             data={state}
          />

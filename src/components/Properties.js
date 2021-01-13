@@ -36,5 +36,3 @@ import { Table } from 'react-bootstrap';
  }
 
  export default Properties;
-
-// <h2>It is {new Date().toLocaleTimeString()}.</h2>
